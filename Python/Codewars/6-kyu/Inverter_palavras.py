@@ -24,10 +24,11 @@ def spin_words(frase):
     resultado = []
 
     for palavra in lista_original:
-        if len(palavra) > 5:
-            resultado.append(palavra[::1])
+        if len(palavra) >= 5:
+            resultado.append(palavra[::-1])
         else:
             resultado.append(palavra)
     return " ".join(resultado)
 
-
+frase_usuario = input("Digite uma frase: ")
+print(spin_words(frase_usuario))
